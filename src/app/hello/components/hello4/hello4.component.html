@@ -1,0 +1,45 @@
+<div class="col-12 no-padding" [hidden]="submitted">
+  <form
+    [formGroup]="nameForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-12">
+        Gib deinen Namen ein, damit ich dich grüßen kann.
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          formControlName="name" />
+        <ng-container *ngIf="nameForm.controls.name">
+          <div [hidden]="nameForm.controls.name.valid || nameForm.controls.name.pristine || nameForm.controls.name.errors['forbiddenName']"
+               class="alert alert-danger">
+            Ohne Name kann ich nicht weitermachen.
+          </div>
+          <div [hidden]="nameForm.controls.name.valid || nameForm.controls.name.pristine || nameForm.controls.name.errors['required']"
+               class="alert alert-danger">
+            Der Name 'Alex' ist leider nicht erlaubt
+          </div>
+          
+        </ng-container>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <button
+          class="btn btn-sm btn-primary"
+          type="submit"
+          [disabled]="!nameForm.valid && !nameForm.touched">
+          sag Hallo!
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="row" [hidden]="!submitted">
+  <div class="col">
+    Hallo {{userName}}
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<p>Gib deinen Namen ein:
+  <app-name-input (submitted)="sayHello()" (textEntered)="nameChanged($event)"></app-name-input>
+</p>
+<button class="btn btn-sm btn-primary" (click)="sayHello()">sag Hallo</button>
+<app-hello [name]="name" *ngIf="showHelloComponent"></app-hello>

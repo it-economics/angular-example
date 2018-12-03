@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#">Example</a>
+  <a class="nav-item navbar-link mr-1" routerLink="/hello/hello" routerLinkActive="active">Hello</a>
+  <a class="nav-item navbar-link mr-1" routerLink="/hello/hello2" routerLinkActive="active">Hello 2</a>
+  <a class="nav-item navbar-link mr-1" routerLink="/hello/hello3" routerLinkActive="active">Hello 3</a>
+  <a class="nav-item navbar-link mr-1" routerLink="/hello/hello4" routerLinkActive="active">Hello 4</a>
+  <a class="nav-item navbar-link" routerLink="/weather" routerLinkActive="active">Weather</a>
+</nav>
+
+<main role="main" class="container">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</main>

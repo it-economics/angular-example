@@ -1,0 +1,18 @@
+<p>
+  Hallo {{ displayName }}!
+</p>
+<h1>Kontrollstrukturen</h1>
+<h2>*ngIf</h2>
+<p *ngIf="name" id="namedHello">
+  Hallo {{ name }}!
+</p>
+<p *ngIf="!name" id="noNameFallback">
+  Hallo!
+</p>
+<h2>*ngFor</h2>
+<div *ngIf="names && names.length > 0">
+  Hallo!
+  <ul>
+    <li *ngFor="let name of names">{{ name }}</li>
+  </ul>
+</div>
